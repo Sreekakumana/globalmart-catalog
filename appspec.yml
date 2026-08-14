@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /projects/cloud-support-engineer-projects/project-3/globalmart-catalog/build
+    destination: /usr/share/nginx/html/
+hooks:
+  BeforeInstall:
+    - location: projects/cloud-support-engineer-projects/project-3/globalmart-catalog/scripts/before_install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: projects/cloud-support-engineer-projects/project-3/globalmart-catalog/scripts/after_install.sh
+      timeout: 300
+      runas: root
